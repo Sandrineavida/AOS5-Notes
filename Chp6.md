@@ -205,16 +205,11 @@ ing the problem.
 
 4. 如果上述问题（步骤3）找到具有正（或负）简化成本的列用于最大化（或最小化）问题，则通过添加新列更新主问题并返回步骤2；否则当前解是最优解。
 
-以下是您图片中内容的翻译：
-
----
-
-
-以下是图片内容的翻译：
-
 ---
 
 ### 6.2.2 示例：切割库存问题
+
+[一个很好的讲解](https://mp.weixin.qq.com/s?__biz=MzU2NDc1MTE3Mg==&mid=2247484818&idx=1&sn=a0df897d38ab32aab90a887843bcec9a&chksm=fc477bb9cb30f2af5a5d49a60f3b7ead6aa7894408e69c9cfb40bf139825f1814a41950bd3e4&mpshare=1&scene=1&srcid=0306pnDBakAONycdIvGwNjNy&sharer_sharetime=1583459820126&sharer_shareid=d35bcdb72469247fcdeeffa03109c5d9&key=ecd68b1e14854e41e7a4cf0987af0192b039d026cac21000ededcfa059241870c1e6af8764d6c5d6f98ee30a6cd365b8f08ebd29dab569f7cca88daac12535532fdf963624e58809b3d4e1ff5bce0af1&ascene=1&uin=ODc3NDIwMDYx&devicetype=Windows+10&version=62080079&lang=zh_CN&exportkey=AdF6khzoorXuytqFknByE44%3D&pass_ticket=n%2FCOw4N09sbYiPVW0uxYirvz%2FBI7F5DDpGW14TVNVlPG7iaxK6eI1%2B%2BbyWjNAClC)
 
 我们有一个长度固定的卷材（数量假定无限），以及需求中需要切割成不同长度的小卷材。我们需要设计一种切割方法，既满足客户需求，又将浪费降到最低。小卷材是通过以特定方式切割大卷材获得的，这种切割方式被称为“切割模式”。
 
