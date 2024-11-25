@@ -1,4 +1,4 @@
-from utils.col_gen import column_generation
+from utils.col_gen_cut_stirck import column_generation
 
 L = 259
 l = [81, 70, 68]

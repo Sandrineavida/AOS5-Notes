@@ -114,9 +114,13 @@ def column_generation(L, l, b):
         # 将新模式添加到模式矩阵 A
         A = np.column_stack((A, z))
 
+
         # 在主问题中添加新变量
         new_var_name = f"x{A.shape[1]}"
         cplex_obj.variables.add(names=[new_var_name], types=['C'], lb=[0], ub=[cp.infinity])
+        # 更新主问题的目标函数
+        cplex_obj.objective.set_linear([(new_var_name, 1.0)])
+        # 更新主问题的约束
         for i in range(num_items):
             cplex_obj.linear_constraints.set_coefficients(i, new_var_name, z[i])
 
