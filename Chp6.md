@@ -421,7 +421,7 @@ e7 [ 0     1       ]
 - x_p_i是 path pi 的流量 (i={1,2,3,4,5})
 - 如果一个e_j在所有paths中只涉及了一次， j={1,..,7},
 
-![image](ori_prim.png)
+![image](figs/ori_prim.png)
 
 ---
 

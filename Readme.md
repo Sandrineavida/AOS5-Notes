@@ -140,10 +140,10 @@ print(final_obj_value)
 
 [//]: # (在一行中依次插入rlmp四张图, 并且保证它们均分屏幕宽度)
 <div style="display: flex; justify-content: space-between;">
-    <img src="./rlmp1.png" style="width: 24%;">
-    <img src="./rlmp2.png" style="width: 24%;">
-    <img src="./rlmp3.png" style="width: 24%;">
-    <img src="./rlmp4.png" style="width: 24%;">
+    <img src="figs/rlmp1.png" style="width: 24%;">
+    <img src="figs/rlmp2.png" style="width: 24%;">
+    <img src="figs/rlmp3.png" style="width: 24%;">
+    <img src="figs/rlmp4.png" style="width: 24%;">
 </div>
 
 
