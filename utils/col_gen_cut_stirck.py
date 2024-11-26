@@ -19,7 +19,7 @@ def column_generation(L, l, b):
 
     # 初始化模式矩阵 A（每列是一个模式）
     num_items = len(l)
-    A = np.eye(num_items)  # 初始模式：每列只切一类
+    A = np.eye(num_items)  # 初始模式：每根棍子只切割一次 负责一种需求
     variable_names = [f"x{i + 1}" for i in range(num_items)]
 
     # 添加初始变量到主问题
@@ -119,7 +119,10 @@ def column_generation(L, l, b):
         new_var_name = f"x{A.shape[1]}"
         cplex_obj.variables.add(names=[new_var_name], types=['C'], lb=[0], ub=[cp.infinity])
         # 更新主问题的目标函数
+        # print("!!!!!!!!!!!!! ", cplex_obj.objective.get_linear())
         cplex_obj.objective.set_linear([(new_var_name, 1.0)])
+        # print("?????????????????? ",cplex_obj.objective.get_linear())
+
         # 更新主问题的约束
         for i in range(num_items):
             cplex_obj.linear_constraints.set_coefficients(i, new_var_name, z[i])

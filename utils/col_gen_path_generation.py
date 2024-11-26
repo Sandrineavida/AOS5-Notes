@@ -1,6 +1,7 @@
 import cplex as cp
 import numpy as np
 from utils import my_graph
+from utils.col_gen_visual import visualize_process_with_legend
 
 def column_generation(d, V, E, Cap_E, Pd0):
     """
@@ -111,6 +112,8 @@ def column_generation(d, V, E, Cap_E, Pd0):
                      p_new_binary,
                      reduced_cost)
 
+        visualize_process_with_legend(V, E, Cap_E, Pd, xp)
+
         # 如果 reduced cost < 0，停止迭代
         if reduced_cost < 0.0001:
             break
@@ -123,8 +126,10 @@ def column_generation(d, V, E, Cap_E, Pd0):
         new_var_name = f"xp{Pd.shape[1]}"
         cplex_obj.variables.add(names=[new_var_name], types=['C'], lb=[0], ub=[cp.infinity])
 
+        # print("!!!!!!!!!!!!! ", cplex_obj.objective.get_linear())
         # 更新目标函数
         cplex_obj.objective.set_linear([(new_var_name, 1.0)])
+        # print("?????????????????????? ", cplex_obj.objective.get_linear())
 
         # 修改约束，将新变量添加到所有边的容量约束中
         for i in range(len(E)):  # 遍历所有边（约束行）
